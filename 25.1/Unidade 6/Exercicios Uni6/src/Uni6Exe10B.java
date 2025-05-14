@@ -20,70 +20,112 @@ public class Uni6Exe10B {
             switch (opcao) {
                 case 1:
                     posicao = incluirValor(vetor, posicao, teclado);
-
                     break;
                 case 2:
-                    pesquisarValor(vetor, teclado);
+                    // pesquisarValor(vetor, teclado);
                     break;
                 case 3:
                     alterarValor(vetor, posicao, teclado);
                     break;
                 case 4:
-
+                    posicao = excluirValor(vetor, posicao, teclado);
                     break;
                 case 5:
-
+                    mostrarValores(vetor, posicao, teclado);
                     break;
                 case 6:
-
+                    ordenarValores(vetor, posicao);
                     break;
                 case 7:
-
+                    inverterValores(vetor, posicao);
                     break;
                 case 8:
-
                     break;
-
                 default:
                     break;
             }
         } while (opcao != 8);
+    }
 
+    private void inverterValores(int[] vetor, int posicao) {
+        for (int i = 0; i < posicao / 2; i++) {
+            int aux = vetor[i];
+            vetor[i] = vetor[posicao - 1 - i];
+            vetor[posicao - 1 - i] = aux;
+        }
+        System.out.println("Valores invertidos.");
+    }
+
+    private void ordenarValores(int[] vetor, int posicao) {
+        for (int i = 0; i < posicao - 1; i++) {
+            for (int j = i + 1; j < posicao; j++) {
+                if (vetor[i] > vetor[j]) {
+                    int value = vetor[i];
+                    vetor[i] = vetor[j];
+                    vetor[j] = value;
+                }
+            }
+        }
+        System.out.println("Valores ordenados.");
+    }
+
+    private void mostrarValores(int[] vetor, int posicao, Scanner teclado) {
+        System.out.print("Valores no vetor: ");
+        for (int i = 0; i < posicao; i++) {
+            System.out.print(vetor[i] + " ");
+        }
+        System.out.println();
+    }
+
+    private int excluirValor(int[] vetor, int posicao, Scanner teclado) {
+        System.out.print("Digite o número que deseja excluir: ");
+        int excluir = teclado.nextInt();
+        for (int i = 0; i < posicao; i++) {
+            if (vetor[i] == excluir) {
+                for (int j = i; j < posicao - 1; j++) {
+                    vetor[j] = vetor[j + 1];
+                }
+                System.out.println("Valor excluído.");
+                return posicao - 1;
+            }
+        }
+        System.out.println("Valor não encontrado.");
+        return posicao;
     }
 
     private void alterarValor(int[] vetor, int posicao, Scanner teclado) {
-       int indice = pesquisarValor(vetor, teclado);
-       if (indice >= 0) {
-        System.out.println("digite um novo numero ");
-        int novoNumero = teclado.nextInt();
-        vetor[indice] = novoNumero;
-        System.out.println("numero " + novoNumero + "adicionado no vet[" + indice + "]" );
-       }
+        System.out.print("Digite o número que deseja alterar: ");
+        int valorAlterar = teclado.nextInt();
+        int indice = pesquisarValor(vetor, valorAlterar);
+        if (indice != -1) {
+            System.out.println("Digite o novo valor para alterar: ");
+            int novoNumero = teclado.nextInt();
+            vetor[indice] = novoNumero;
+            System.out.println("Valor alterado para " + novoNumero + " na posição vet[" + indice + "]");
+        } else {
+            System.out.println("Valor não encontrado.");
+        }
     }
 
-    private int pesquisarValor(int[] vetor, Scanner teclado) {
-        System.out.print("digite o numero que deseja pesquisar: ");
-        int value = teclado.nextInt();
-
-        for (int i = 0; i < vetor.length; i++) {
-            if (vetor[i] == value) {
-                System.out.println("valor " + value + " encontrado na posição vet[" + i + "]");
-                return i;    
+    private int pesquisarValor(int[] vetor, int valorAlterar) {
+                for (int i = 0; i < vetor.length; i++) {
+                    if (vetor[i] == valorAlterar) {
+                        System.out.println("Valor " + valorAlterar + " encontrado na posição vet[" + i + "]");
+                return i;
             }
-            
         }
-        System.out.println("numero nao encontrado");
+        System.out.println("Número não encontrado.");
         return -1;
     }
 
     private int incluirValor(int[] vetor, int posicao, Scanner teclado) {
-        System.out.print("digite um numero: ");
+        System.out.print("Digite um número: ");
         int value = teclado.nextInt();
         if (posicao < vetor.length) {
             vetor[posicao] = value;
-            System.out.println("numero " + value + " incluido na posicao vet[" + posicao + "]");
+            System.out.println("Número " + value + " incluído na posição vet[" + posicao + "]");
         } else {
-            System.out.println("posição invalida");
+            System.out.println("Posição inválida.");
         }
         return posicao + 1;
     }
@@ -91,5 +133,4 @@ public class Uni6Exe10B {
     public static void main(String[] args) {
         new Uni6Exe10B();
     }
-
 }
