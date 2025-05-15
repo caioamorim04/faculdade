@@ -1,18 +1,7 @@
-## Getting Started
+Na aula do dia 26/02, o foco principal foi na programação em Java, e eu aprendi conceitos fundamentais que estou começando a dominar agora.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Trabalhamos com um exercício que pedia para calcular a área de uma circunferência. Para isso, eu usei o Scanner para ler o valor do raio digitado pelo usuário, e depois usei a fórmula matemática área = π * raio², aplicando Math.pow para elevar o raio ao quadrado. Esse exercício me ajudou a entender como funciona o uso de variáveis, entrada de dados, operações matemáticas e o método System.out.println para exibir resultados. Foi uma aplicação bem prática e direta dos conceitos básicos da linguagem.
 
-## Folder Structure
+Além disso, aprendi a usar o Git e o GitHub para organizar meus códigos. Clonei um repositório com git clone, e entendi como funciona o controle de versões com git add, git commit e git push. Também aprendi a renomear pastas, excluir arquivos e escrever mensagens personalizadas nos commits, o que deixa o projeto muito mais organizado e fácil de entender — especialmente quando se trabalha com várias pastas, como as de cada unidade da disciplina.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Foi uma aula muito útil, porque além de praticar a lógica e a linguagem Java, eu também aprendi como manter meu código bem estruturado e atualizado em um repositório no GitHub — algo essencial para qualquer programador.
