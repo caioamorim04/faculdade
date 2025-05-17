@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Uni6Exe01 {
+public class Uni6Exe1 {
     public static void main(String[] args) {
-        new Uni6Exe01();
+        new Uni6Exe1();
     }
 
-    private Uni6Exe01() {
+    private Uni6Exe1() {
         Scanner teclado = new Scanner(System.in);
         int[] numeros = new int[10];
         lerNumeros(numeros, teclado);
