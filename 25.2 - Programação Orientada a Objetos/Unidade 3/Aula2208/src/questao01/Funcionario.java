@@ -10,7 +10,7 @@ public class Funcionario {
 
     public void setNome(String nome) {
         if (nome.trim().isEmpty()) { //trim para tirar os espaçoes que nao servem pra nada e os is empty fala por si
-            throw new IllegalArgumentException("nome invalido")
+            throw new IllegalArgumentException("nome invalido");
         }
         this.nome = nome;
     }
