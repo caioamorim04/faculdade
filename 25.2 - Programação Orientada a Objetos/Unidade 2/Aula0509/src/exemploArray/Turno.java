@@ -1,5 +1,6 @@
 package exemploArray;
 
-public class Turno {
+public enum Turno {
+    MATUTINO, VESPERTINO, NOTURNO;
 
 }
